@@ -24,7 +24,10 @@ public class DetectAttachment : MonoBehaviour
         if (collision.gameObject.CompareTag("vehicle") && this.tag=="ride")
             refGM.TrafficCrash();
         if (collision.gameObject.CompareTag("Player") && this.tag == "ride")
+        {
+            refGM.PerfectlyLand();
             this.transform.parent = player.gameObject.transform;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -60,7 +63,7 @@ public class DetectAttachment : MonoBehaviour
         //player.transform.position = new Vector3(player.GetComponent<PlayerController>().ridedVehicle.transform.position.x,
         //                                       player.GetComponent<PlayerController>().ridedVehicle.transform.position.y + 3,
         //                                       player.GetComponent<PlayerController>().ridedVehicle.transform.position.z / 2);
-        refGM.PerfectlyLand();
+        //refGM.PerfectlyLand();
         Check();
     }
     void Check()

@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        refSM = new ScoreManager();
         gameOver = false;
         Time.timeScale = 1;
         AllPannelDeactive();
